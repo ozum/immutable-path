@@ -1,0 +1,28 @@
+{% include "module-header" %}
+
+# Installation
+
+{%- include "installation" -%}
+
+# Synopsis
+
+```ts
+const object = { a: "a", b: [0, 1], c: new Map([["x", "x"]]) };
+
+set(object, "a", "new"); // { a: "new", b: [0, 1], c: new Map([["x", "x"]]) };
+set(object, "a.c.x", "new"); // { a: "new", b: [0, 1], c: new Map([["x", "new"]]) };
+set(object, "a.c.x", "new"); // { a: "new", b: [0, 1], c: new Map([["x", "new"]]) };
+unset(object, "a.c.x"); // { a: "new", b: [0, 1], c: new Map() };
+unset(object, "a.c.x", { unsetEmpty: true }); // { a: "new", b: [0, 1] };
+
+const otherObject = { a: "a", b: new CustomClass() };
+set(otherObject, "b.x", "new", { atomicClasses: CustomClass }); // { a: "a", b: "x" }
+```
+
+# Details
+
+Update, get, delete or check existence of keys of deeply nested objects, keys and `Map`s.
+
+# API
+
+{% include "api.md" %}
