@@ -105,6 +105,6 @@
     "version": "0.1.58"
   },
   "devDependencies": {
-    "devkeeper": "^0.1.58"
+    "devkeeper": "^1.1.0"
   }
 }
